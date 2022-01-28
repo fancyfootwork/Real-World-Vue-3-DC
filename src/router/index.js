@@ -1,6 +1,7 @@
 import { createRouter, createWebHistory } from "vue-router";
 import EventList from "../views/EventList.vue";
 import EventDetails from "../views/EventDetails.vue";
+import NotFound from "../views/NotFound.vue";
 
 const routes = [
   {
@@ -22,6 +23,11 @@ const routes = [
     // which is lazy-loaded when the route is visited.
     component: () =>
       import(/* webpackChunkName: "about" */ "../views/About.vue"),
+  },
+  {
+    path: "/:pathMatch(.*)*",
+    name: "PageNotFound",
+    component: NotFound,
   },
 ];
 
